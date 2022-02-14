@@ -1,7 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 
 function App() {
+
+  const [count, setCount] = useState(0)
+
+  const incrementCount = () => {
+    setCount(count + 1)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +25,8 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={incrementCount}>Increment counter</button>
+        <p>This is the counter nr: {count}</p>
       </header>
     </div>
   );
